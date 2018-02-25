@@ -1,9 +1,15 @@
 package com.abedor.guess_a_word;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,11 +20,13 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<String> words;
-    String word;
+    ArrayList<String> hints;
+    String word; //current word to guess
     Button btn_submit; //Button that submits choice
     TextView ti_guess; //Text input where the guesses are
     TextView tv_hint; //A description of the chosen word
     TextView tv_cipher; //**** representation of a word
+    AlertDialog.Builder builder;
     private enum TO_TOAST { WORD_OK, WORD_BAD, LETTER_OK, LETTER_BAD, TOTAL_BAD }
 
     @Override
@@ -30,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         tv_hint = findViewById(R.id.tv_hint);
         tv_cipher = findViewById(R.id.tv_cipher);
         words = new ArrayList<>();
+        hints = new ArrayList<>();
         setWords();
         setWord();
         tv_cipher.setText(setCipher());
@@ -39,7 +48,14 @@ public class MainActivity extends AppCompatActivity {
                 submit(ti_guess.getText().toString());
             }
         });
+        builder = new AlertDialog.Builder(this).setTitle(R.string.menu_about).setMessage(R.string.about).
+                setNegativeButton(R.string.dialog_close,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
+                    }
+                });
     }
 
     //TODO: change to database access
@@ -49,11 +65,18 @@ public class MainActivity extends AppCompatActivity {
         words.add("proxima");
         words.add("bird");
         words.add("flyer");
+        hints.add("A reproductive structure of a certain kind of plants.");
+        hints.add("Toxic chemical. Widely used in rocketry and aircraft engineering, but is not a fuel.");
+        hints.add("Second closest to the Earth star.");
+        hints.add("A certain group of animals, vast majority of which are capable of sustaining themselves in the air.");
+        hints.add("The first ever motorized, heavier-than-air piece of wood and cloth that lifter freely from the ground.");
     }
     //sets current guess word
     private void setWord(){
         Random r = new Random();
-        word = words.get(r.nextInt(words.size()));
+        int pos = r.nextInt(words.size());
+        word = words.get(pos);
+        tv_hint.setText(hints.get(pos));
     }
     //sets cipher for the first time
     private String setCipher(){
@@ -137,5 +160,32 @@ public class MainActivity extends AppCompatActivity {
             Log.d("EXC",e.getMessage());
         }
     }
+
+    private void restart(){
+        finish();
+        startActivity(getIntent());
+    }
+    //Creates the menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.menu_about:
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                break;
+            case R.id.menu_restart:
+                restart();
+                break;
+        }
+        return true;
+    }
+
 
 }
