@@ -12,10 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fe398afa-5de0-4180-b37f-a37820f86510" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/abedor/guess_a_word/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/abedor/guess_a_word/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,8 +76,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/abedor/guess_a_word/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+            <state relative-caret-position="660">
+              <caret line="73" column="33" lean-forward="false" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
               <folding>
                 <element signature="e#1265#1439#0" expanded="true" />
                 <element signature="e#1438#1439#0" expanded="true" />
@@ -88,12 +85,13 @@
                 <element signature="method#setWord#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#setCipher#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#setCipher#1;class#MainActivity#0" expanded="false" />
+                <element signature="method#submit#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#toaster#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#3745#3768#0" expanded="true" />
-                <element signature="e#3910#3934#0" expanded="true" />
-                <element signature="e#4077#4102#0" expanded="true" />
-                <element signature="e#4246#4272#0" expanded="true" />
-                <element signature="e#4415#4440#0" expanded="true" />
+                <element signature="e#3899#3922#0" expanded="true" />
+                <element signature="e#4064#4088#0" expanded="true" />
+                <element signature="e#4231#4256#0" expanded="true" />
+                <element signature="e#4400#4426#0" expanded="true" />
+                <element signature="e#4569#4594#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2022,7 +2020,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519582280776" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519583172574" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2122,7 +2120,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519582280776" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1519583172575" />
       </method>
     </configuration>
     <list size="1">
@@ -2230,8 +2228,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/abedor/guess_a_word/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+        <state relative-caret-position="660">
+          <caret line="73" column="33" lean-forward="false" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
           <folding>
             <element signature="e#1265#1439#0" expanded="true" />
             <element signature="e#1438#1439#0" expanded="true" />
@@ -2239,12 +2237,13 @@
             <element signature="method#setWord#0;class#MainActivity#0" expanded="false" />
             <element signature="method#setCipher#0;class#MainActivity#0" expanded="false" />
             <element signature="method#setCipher#1;class#MainActivity#0" expanded="false" />
+            <element signature="method#submit#0;class#MainActivity#0" expanded="false" />
             <element signature="method#toaster#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#3745#3768#0" expanded="true" />
-            <element signature="e#3910#3934#0" expanded="true" />
-            <element signature="e#4077#4102#0" expanded="true" />
-            <element signature="e#4246#4272#0" expanded="true" />
-            <element signature="e#4415#4440#0" expanded="true" />
+            <element signature="e#3899#3922#0" expanded="true" />
+            <element signature="e#4064#4088#0" expanded="true" />
+            <element signature="e#4231#4256#0" expanded="true" />
+            <element signature="e#4400#4426#0" expanded="true" />
+            <element signature="e#4569#4594#0" expanded="true" />
           </folding>
         </state>
       </provider>

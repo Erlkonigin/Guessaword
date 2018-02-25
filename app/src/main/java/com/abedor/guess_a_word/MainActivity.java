@@ -98,7 +98,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                         pos++;
                     }
+                    if(tv_cipher.getText().toString().contains("*"))
                     toaster(TO_TOAST.LETTER_OK);
+                    else toaster(TO_TOAST.WORD_OK);
+
                 }
                 //if the letter guess is incorrect
                 else{
@@ -107,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else toaster(TO_TOAST.TOTAL_BAD);
+        ti_guess.setText(null);
     }
 
     private void toaster(TO_TOAST toToast){
