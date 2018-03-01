@@ -40,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
         words = new ArrayList<>();
         hints = new ArrayList<>();
         setWords();
-        setWord();
-        tv_cipher.setText(setCipher());
+        initiate();
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    private void initiate()
+    {
+        setWord();
+        tv_cipher.setText(setCipher());
     }
 
     //TODO: change to database access
@@ -73,8 +78,12 @@ public class MainActivity extends AppCompatActivity {
     }
     //sets current guess word
     private void setWord(){
+        int pos;
         Random r = new Random();
-        int pos = r.nextInt(words.size());
+        do{
+            pos = r.nextInt(words.size());
+        }
+        while(word == words.get(pos));
         word = words.get(pos);
         tv_hint.setText(hints.get(pos));
     }
@@ -161,10 +170,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void restart(){
-        finish();
-        startActivity(getIntent());
-    }
     //Creates the menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -181,7 +186,8 @@ public class MainActivity extends AppCompatActivity {
                 dialog.show();
                 break;
             case R.id.menu_restart:
-                restart();
+                //restart();
+                initiate();
                 break;
         }
         return true;
