@@ -57,10 +57,20 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    private void initiate()
-    {
+    private void initiate() {
         setWord();
         tv_cipher.setText(setCipher());
+    }
+
+    private void reinit() {
+        try{
+            wait(1000);
+            initiate();
+        }
+        catch(Exception e){
+            Toast.makeText(MainActivity.this, "Error: " + e.getMessage().toString(), Toast.LENGTH_SHORT);
+            Log.d("EXC", e.getMessage().toString());
+        }
     }
 
     //TODO: change to database access
@@ -111,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 if(ti_guess.getText().toString().equals(word)){
                     toaster(TO_TOAST.WORD_OK);
                     tv_cipher.setText(word);
+                    initiate();
                 }
                 //if the word guess is incorrect
                 else{
@@ -132,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if(tv_cipher.getText().toString().contains("*"))
                     toaster(TO_TOAST.LETTER_OK);
-                    else toaster(TO_TOAST.WORD_OK);
+                    else { toaster(TO_TOAST.WORD_OK); initiate();}
 
                 }
                 //if the letter guess is incorrect
